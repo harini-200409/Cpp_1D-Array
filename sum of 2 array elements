@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int *createarray(int size)
+{
+    return new int[size];
+}
+void getelements(int *arr,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+}
+void arraysum(int *arr1,int n1,int *arr2,int n2)
+{
+    int maximum=n1>n2?n1:n2;
+    for(int i=0;i<maximum;i++)
+    {
+        int a=i<n1?arr1[i]:0;
+        int b=i<n2?arr2[i]:0;
+        cout<<a+b<<endl;
+    }
+}
+int main()
+{
+    int n1,n2;
+    cin>>n1;
+    int *arr1=createarray(n1);
+    getelements(arr1,n1);
+    cin>>n2;
+    int *arr2=createarray(n2);
+    getelements(arr2,n2);
+    arraysum(arr1,n1,arr2,n2);
+    return 0;
+}
